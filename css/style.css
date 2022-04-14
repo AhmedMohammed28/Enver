@@ -614,7 +614,7 @@ footer .navbar p {
     margin-bottom: 22px;
   }
   .showcase-image {
-    width: 381px;
+    max-width: 381px;
     margin-top: 92px;
   }
   /* about */
