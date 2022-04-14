@@ -44,6 +44,9 @@ a {
   padding: 10.2px 42px;
   cursor: pointer;
 }
+.unselectable {
+  user-select: none;
+}
 
 /* Navbar */
 .navbar {
@@ -63,11 +66,20 @@ a {
 .navbar ul li a {
   font-size: 18px;
   line-height: 1.36;
+  transition: color .3s;
+}
+.navbar ul li a:hover {
+  color: #fff;
 }
 .navbar a.btn {
   font-size: 16px;
   line-height: 1.37;
   letter-spacing: -0.5px;
+  transition: all .3s;
+}
+.navbar a.btn:hover {
+  background-color: #fff;
+  color: var(--dark-color);
 }
 .hamburger {
   display: none;
@@ -100,17 +112,22 @@ a {
   max-width: 536px;
 }
 .showcase-text a.btn {
+  display: flex;
+  align-items: center;
+  width: fit-content;
   background-color: var(--primary-color);
-  border: none;
+  border: 1px solid transparent;
   font-size: 20px;
   font-weight: 700;
   line-height: 1.35;
   padding: 13px 28.4px;
+  transition: all .3s;
 }
-.showcase-text a.btn img {
-  position: relative;
-  top: 5px;
+.showcase-text a.btn:hover {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
 }
+
 .showcase-image {
   position: relative;
   left: 85.29px;
@@ -225,6 +242,12 @@ a {
 .service {
   margin-bottom: 96px;
 }
+.service img {
+  transition: transform .5s;
+}
+.service img:hover {
+  transform: rotate(360deg);
+}
 .service h3 {
   font-size: 28px;
   font-weight: 600;
@@ -282,11 +305,17 @@ a {
   padding: 24px;
   border-radius: 14px;
   background-color: #1E1E20;
+  cursor: pointer;
+}
+.card:hover img {
+  transform: scale(1.03);
 }
 .card img {
   max-width: 336px;
   height: 253px;
+  transition: transform .3s;
 }
+
 .extra {
   display: none;
 }
@@ -315,13 +344,20 @@ a {
 }
 .contact-content a {
   background-color: var(--primary-color);
-  border: none;
+  border: 1px solid transparent;
   font-size: 21px;
   font-weight: 700;
   line-height: 1.36;
   border-radius: 5px;
   padding: 15.8px 48.7px;
+  transition: all .3s;
 }
+.contact-content a:hover {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+
+
 .contact-content img:first-child {
   position: absolute;
   right: 10px;
@@ -451,6 +487,9 @@ footer .navbar p {
     padding: 0px 70px;
 }
   /* header */
+  header {
+    overflow: hidden;
+  }
   .showcase-text a.btn {
     font-size: 16px;
   }
@@ -678,6 +717,11 @@ footer .navbar p {
   .navbar ul li a,
   footer .navbar p {
     font-size: 18px;
+  }
+}
+@media(max-width: 580px) {
+  .cards > img:first-child {
+    right: 0px;
   }
 }
 @media(max-width: 500px) {
